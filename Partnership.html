@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DLCF ABSU — Homepage</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --primary:#1E2D50;
+  --accent:#00A9E0;
+  --white:#ffffff;
+  --muted:#666672;
+  --rounded:14px;
+  --shadow:0 10px 30px rgba(19,28,45,0.07);
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;}
+body{
+  font-family:'Poppins',sans-serif;
+  background: #1E2D50;;
+  color:#222;
+  line-height:1.45;
+}
+
+/* Navbar */
+/* Navbar */
+/* NAVBAR BASE */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background: #fff;
+  z-index: 1200;
+  border-bottom: 1px solid rgba(30,45,80,0.05);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+}
+
+.nav-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.brand img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Desktop Menu */
+nav ul.desktop-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul.desktop-menu li a {
+  text-decoration: none;
+  color: #1E2D50;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav ul.desktop-menu li a:hover {
+  background:#1E2D5000 ;
+}
+
+/* Hamburger */
+.hamb {
+  display: none; /* hidden on desktop */
+  font-size: 32px;
+  color: #1E2D50;
+  cursor: pointer;
+  z-index: 1300;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: -500px;
+  left: 0;
+  width: 100%;
+  background: #1E2D50;
+  flex-direction: column;
+  display: flex;
+  padding: 20px 0;
+  gap: 10px;
+  transition: top 0.5s ease;
+  z-index: 1200;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu.open {
+  top: 75px;
+}
+
+/* Hamburger active rotation */
+.hamb.active i {
+  transform: rotate(180deg);
+  transition: 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav ul.desktop-menu {
+    display: none; /* hide desktop menu */}
+    .brand img{ height: 65px;}
+
+
+  .hamb {
+    display: block;
+  }
+}
+
+/* Hero */
+.hero-wrap{position:relative;overflow:visible;}
+.hero{
+  background: url('cam1.jpg') center/cover no-repeat;
+  min-height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--white);
+  text-align:center;
+  padding:60px 20px;
+  position:relative;
+  flex-direction:column;
+}
+.hero h1{
+  font-family:'Poetsen One', cursive;
+  font-size:58px;
+  font-weight:800;
+  line-height:1.2;
+  padding-top:55px;
+  text-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+.hero .to-text{
+  font-family:'Poppins', sans-serif;
+  font-size:36px;
+  font-weight:600;
+  margin:12px 0;
+  text-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+.hero .desc-text{
+  font-family:'Poppins', sans-serif;
+  font-size:20px;
+  font-weight:500;
+  margin-top:12px;
+  max-width:700px;
+  line-height:1.5;
+  text-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Hero Write-up box overlapping hero */
+.hero-box-outside {
+  max-width: 900px;
+  height: 250px;
+  margin: -50px auto 24px auto;
+  background:#fff;
+  padding:60px 60px;
+  border-radius:24px;
+  box-shadow:0 12px 36px rgba(19,28,45,0.15);
+  text-align:center;
+  font-style: italic;
+  font-size:18px;
+  color:#0F1A33;
+  position: relative;
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  font-weight: bold;
+}
+
+
+/* About Us Section */
+.about{
+  max-width:1200px;
+  margin:36px auto;
+  padding:24px 16px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+.about h3{
+  font-family:'Poetsen One', cursive;
+  font-size:28px;
+  color:#0F1A33;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:20px;
+}
+.about p{
+  font-size:14px;
+  line-height:1.6;
+  color:#0F1A33;
+  text-align:center;
+}
+
+
+/* Mentor section */
+.mentor{
+  display:flex;
+  flex-wrap:wrap;
+  max-width:1400px;
+  height:900px;
+  margin:40px auto 36px auto;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  position:relative;
+  background: url('past.jpg') center/cover no-repeat;
+  min-height:450px;
+  justify-content:center;
+  align-items:center;
+}
+.mentor-content{
+  max-width:900px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 32px;
+  border-radius:12px;
+  font-size: 100px;
+  color:#fff;
+}
+.mentor-left h3{
+  font-family: 'Poetsen One', cursive;;
+  font-weight:800;
+  font-size:32px;
+  margin-bottom:16px;
+}
+.mentor-left p{
+  font-size:24px;
+  line-height:1.6;
+  text-align: center;
+  margin-left:10px;
+}
+
+/* Long writeup only for large screens */
+.long-writeup{
+  display:block;
+  text-align: left;
+  font-size: 50px;
+  padding-right: 90px;
+}
+.short-writeup{
+  display:none;
+}
+
+/* Coordinator slider */
+.section{
+  max-width:1200px;
+  margin:36px auto;
+  padding:0 16px;
+}
+.section h3{
+  font-size:24px;
+  color:#0F1A33;
+  margin-bottom:24px;
+  text-align:center;
+}
+.slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each slide */
+.slide {
+  flex: 0 0 300px; /* width of each slide */
+  margin-right: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(19,28,45,0.04);
+  background: #fff;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.slide .name {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 16px;
+  padding: 12px 0;
+}
+
+/* Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30,45,80,0.2);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.slider-arrow.left { left: 10px; }
+.slider-arrow.right { right: 10px; }
+
+/* Footer */
+footer{
+  background:var(--primary);
+  color:#fff;
+  padding:28px;
+  text-align:center;
+  margin-top:36px;
+}
+footer img{
+  width:140px;
+  margin-bottom:12px;
+}
+
+/* Responsive */
+@media (max-width:1200px){
+  .hero h1{font-size:42px;}
+  .hero .to-text{font-size:32px;}
+  .hero .desc-text{font-size:18px;}
+  .hero-box-outside{font-size:16px;}
+  .mentor-left h3{font-size:28px;}
+  .mentor-left p{font-size:18px;}
+}
+@media (max-width:900px){
+  nav ul{display:none;}
+  .hamb{display:block;}
+  .mentor{flex-direction:column;min-height: auto;padding:0 16px;height: 750px; max-width: 335px; max-height: 450px;}
+  .slide{min-width:78%;flex:0 0 78%;}
+  .hero-box-outside{margin:-40px 16px 24px;}
+  .mentor-content{padding:16px;}
+  .long-writeup{display:none;}
+  .short-writeup{display:block;}
+  .brand img{width: 60px; padding-top:10px;}
+}
+@media (max-width:480px){
+  .hero h1{font-size:28px;}
+  .hero .to-text{font-size:24px;}
+  .hero .desc-text{font-size:16px;}
+  .hero-box-outside{
+    padding:24px 16px;
+    font-size:14px;
+    margin:-30px 12px 16px;
+    height:auto;
+    max-width: 350px;
+    justify-content:flex-start;
+    color:#1E2D50;
+  }
+  .mentor-content{
+    padding:16px;
+    height:auto;
+    margin:0 16px;
+    max-width:500px;
+  }
+  .mentor-left h3{font-size:20px;}
+  .mentor-left p{font-size:14px;}
+  .slide{min-width:90%;flex:0 0 90%;}
+}
+
+/* Mobile nav active style */
+nav ul.active{
+  display:flex;
+  flex-direction:column;
+  position:absolute;
+  top:64px;
+  right:18px;
+  background:#fff;
+  padding:12px;
+  border-radius:10px;
+  box-shadow:0 14px 40px rgba(19,28,45,0.08);
+  z-index:1400;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="logo.png" alt="DLCF ABSU Logo">
+    </div>
+
+    <nav>
+      <ul class="desktop-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Service.html">Our Services</a></li>
+        <li><a href="Tract.html">Tracts</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+         <li><a href="partnership.html">Partnership</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamb" id="hamb">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="Service.html">Our Services</a>
+    <a href="Tract.html">Tracts</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="Contact.html">Contact</a>
+    <a href="Partnership.html">Partnership</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>PARTNER WITH US</h1>
+     
+    </div>
+  </section>
+
+
+<!-- PARTNERSHIP SECTION -->
+<section class="partnership-section" id="partnership">
+  <div class="container">
+    <h5 class="section-title">PARTNERSHIP OPPORTUNITIES</h5>
+    <div class="partnership-grid">
+      <div class="partnership-box">
+        <h3>TITHES AND OFFERINGS</h3>
+        <p>
+          Partner with DLCF ABSU through Tithe and Offering to support the spiritual growth, leadership development, and operational needs of the fellowship. Your faithful contributions empower us to provide consistent worship services, Bible studies, mentorship programs, and campus outreach initiatives. Beyond campus, your offerings enable us to organize revival programs, community service projects, and charity drives that positively impact society.<br><br>
+            <h4>Account No - 2036073825</h4><br>
+             <h4>Bank name- Firstbank of Nigeria<h4>
+             Account name - Deeperlife campus fellowship, ABSU chapter
+ 
+
+        </p>
+      </div>
+      <div class="partnership-box">
+               <h3>DLCF BUILDING PROJECT</h3>
+        <p>
+          DLCF ABSU is currently undertaking an important building project to provide a permanent, functional space for worship, Bible studies, mentorship programs, and fellowship activities. By partnering with us in this initiative, you can directly contribute to the creation of a lasting spiritual home for students on campus.
+
+Your partnership ensures that we can complete the construction efficiently, equipping the fellowship with a safe, welcoming, and well-structured environment.<br><br>
+            <h4>Account No - 2036073825</h4><br>
+             <h4>Bank name- Firstbank of Nigeria<h4>
+             Account name - Deeperlife campus fellowship, ABSU chapter
+ 
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>  
+  
+
+<style>
+/* PARTNERSHIP SECTION */
+.partnership-section {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+.partnership-section .section-title {
+  text-align: center;
+  font-family: 'Poetsen One', cursive;
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #1E2D50;
+}
+
+.partnership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partnership-box {
+  background: #f8f8f8;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(19,28,45,0.6);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partnership-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(19,28,45,0.12);
+}
+
+.partnership-box h3 {
+  font-family: 'Poetsen One', cursive;
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #1E2D50;
+}
+
+.partnership-box p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .partnership-box {
+    padding: 24px 16px;
+  }
+  .partnership-box h3 {
+    font-size: 20px;
+  }
+  .partnership-box p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partnership-section {
+    padding: 40px 12px;
+  }
+  .partnership-box {
+    padding: 20px 12px;
+  }
+  .partnership-box h3 {
+    font-size: 18px;
+  }
+  .partnership-box p {
+    font-size: 13px;
+  }
+}
+</style>
+
+</style>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+
+    <!-- LEFT: Logo + Writeup -->
+    <div class="footer-left">
+      <div class="logo-text">
+        <img src="logo.png" alt="DLCF ABSU Logo">
+        <span>DLCF ABSU</span>
+      </div>
+      <p>
+        Deeper Life Campus Fellowship (DLCF) ABSU nurtures students spiritually, academically, and morally, creating leaders who impact their campus and community positively.
+      </p>
+    </div>
+
+    <!-- MIDDLE: Service Time & Location -->
+    <div class="footer-middle">
+      <h4>Service Time & Location</h4>
+      <p>Location - Public health block, 200level classroom</p>
+      <p>Worship Service - Sunday by 8am</p>
+      <p>Bible Study - Monday by 6pm</p>
+      <p>Revival Hour - Thursday by 6pm</p>
+    </div>
+
+    <!-- RIGHT: Helpful Links -->
+    <div class="footer-right">
+      <h4>Helpful Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="Service.html">Location</a></li>
+        <li><a href="Partnership.html">Partnership</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CALL INFO CENTERED -->
+  <!-- CALL INFO CENTERED -->
+<div class="footer-call-container">
+  <div class="footer-call">
+    Call: 09011727900, 07043205587
+  </div>
+</div>
+</footer>
+
+<style>
+/* FOOTER STYLES */
+footer {
+  background: #fffe;
+  color: #1E2D50;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top:130px;
+  gap: 40px;
+}
+
+.footer-left,
+.footer-middle,
+ .footer-right {
+  flex: 1 1 250px;
+  min-width: 250px;
+  text-align: left;
+}
+
+/* Logo + Text */
+.footer-left .logo-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.footer-left .logo-text img {
+  width: 60px;
+  height: auto;
+}
+.footer-left .logo-text span {
+  font-weight: 700;
+  font-size: 20px;
+}
+.footer-left p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Middle Section */
+.footer-middle h4 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.footer-middle p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* Right Section */
+.footer-right h4 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.footer-right ul li a {
+  text-decoration: none;
+  color: #1E2D50;
+}
+.footer-right ul li a:hover {
+  color: #00A9E0;
+  text-decoration: underline;
+}
+
+/* Call Info */
+
+.footer-call-container {
+  background-color: #1E2D50; /* Dark blue background */
+  padding-bottom: 30px;
+  text-align: center;
+  padding: 16px 20px;
+}
+
+
+.footer-call {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    margin-top: 100px;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .footer-left, .footer-middle, .footer-right {
+    min-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .footer-left .logo-text span { font-size: 18px; }
+  .footer-left p,
+  .footer-middle p,
+  .footer-right ul { font-size: 13px; }
+  .footer-middle h4,
+  .footer-right h4 { font-size: 16px; }
+  .footer-right .footer-left .footer-middle{ gap: 10px;}
+}
+</style>
+</footer>
+
+<script>
+// NAV MOBILE TOGGLE
+  const hamb = document.getElementById("hamb");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamb.addEventListener("click", () => {
+  mobileMenu.classList.toggle("open");
+  hamb.classList.toggle("active");
+
+  const icon = hamb.querySelector("i");
+  if (mobileMenu.classList.contains("open")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-times"); // X icon
+  } else {
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars"); // Hamburger
+  }
+});
+
+// Close mobile menu on link click
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    hamb.classList.remove("active");
+    const icon = hamb.querySelector("i");
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  });
+});
+
+// NAV LINK SCROLLING
+window.addEventListener('load', () => {
+  const track = document.getElementById('coordinatorTrack');
+  const slides = Array.from(track.children);
+
+  if (!slides.length) return;
+
+  let index = 0;
+
+  function getSlideWidth() {
+    return slides[0].offsetWidth + 18; // dynamic
+  }
+
+  function moveSlide() {
+    index++;
+    if (index >= slides.length) index = 0;
+    track.style.transform = `translateX(${-getSlideWidth() * index}px)`;
+  }
+
+  // Auto-slide every 5 seconds
+  let interval = setInterval(moveSlide, 5000);
+
+  // Arrows
+  const leftArrow = document.createElement('button');
+  leftArrow.className = 'slider-arrow left';
+  leftArrow.innerHTML = '&#10094;';
+  document.getElementById('coordinatorSliderOuter').appendChild(leftArrow);
+
+  const rightArrow = document.createElement('button');
+  rightArrow.className = 'slider-arrow right';
+  rightArrow.innerHTML = '&#10095;';
+  document.getElementById('coordinatorSliderOuter').appendChild(rightArrow);
+
+  leftArrow.addEventListener('click', () => {
+    index--;
+    if (index < 0) index = slides.length - 1;
+    track.style.transform = `translateX(${-getSlideWidth() * index}px)`;
+    resetInterval();
+  });
+
+  rightArrow.addEventListener('click', () => {
+    moveSlide();
+    resetInterval();
+  });
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(moveSlide, 5000);
+  }
+});
+
+
+
+</script>
+
+
+</body>
+</html>
+
