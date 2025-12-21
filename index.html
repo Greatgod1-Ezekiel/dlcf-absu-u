@@ -233,7 +233,7 @@ nav ul.desktop-menu li a:hover {
 .mentor{
   display:flex;
   flex-wrap:wrap;
-  max-width:1400px;
+  max-width:900px;
   height:900px;
   margin:40px auto 36px auto;
   border-radius:12px;
@@ -262,6 +262,7 @@ nav ul.desktop-menu li a:hover {
   font-weight:800;
   font-size:32px;
   margin-bottom:16px;
+  
 }
 .mentor-left p{
   font-size:24px;
@@ -270,15 +271,42 @@ nav ul.desktop-menu li a:hover {
   text-align: center;
   margin-left:10px;
 }
+/* 🔥🔥 VERY BIG MENTOR SECTION — LARGE SCREENS ONLY */
+@media (min-width: 1200px) {
 
-/* Long writeup only for large screens */
-.long-writeup{
-  display:block;
-  text-align: left;
-  font-size: 50px;
-  padding-right: 90px;
-  font-weight: bold;
+  .mentor {
+    min-height: 1000px;
+    padding: 120px 40px;
+  }
+
+  .mentor-left h3 {
+    font-family: 'Poetsen One', cursive;
+    font-size: 110px;          /* 🔥 VERY BIG HEADING */
+    font-weight: 800;
+    margin-bottom: 60px;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+
+  .mentor-left p {
+    font-size: 30px;           /* 🔥 VERY BIG WRITEUP */
+    line-height: 1.9;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .long-writeup {
+    display: block;
+  }
+
+  .short-writeup {
+    display: none;
+  }
 }
+
 .short-writeup{
   display:none;
   font-weight: bold;
