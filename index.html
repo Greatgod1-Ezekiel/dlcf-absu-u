@@ -296,40 +296,43 @@ nav ul.desktop-menu li a:hover {
   margin-bottom:24px;
   text-align:center;
 }
+/* SLIDER WRAPPER */
 .slider {
   overflow: hidden;
   width: 100%;
   position: relative;
 }
 
+/* TRACK */
 .slider-track {
   display: flex;
+  gap: 24px;
   transition: transform 0.5s ease-in-out;
 }
-
-/* Each slide */
+/* SLIDE CARD */
 .slide {
-  flex: 0 0 300px; /* width of each slide */
-  margin-right: 18px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(19,28,45,0.04);
+  flex: 0 0 280px;
   background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  overflow: hidden;
   text-align: center;
 }
 
+/* IMAGE — NO CUTTING */
 .slide img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
+  height: 360px;
+  object-fit: contain;   /* 🔥 THIS IS THE KEY */
+  background: #f5f6f8;
 }
 
+/* NAME */
 .slide .name {
-  font-weight: 700;
-  color: var(--primary);
-  font-size: 16px;
-  padding: 12px 0;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px;
+  color: #1E2D50;
 }
 
 /* Arrows */
@@ -349,6 +352,28 @@ nav ul.desktop-menu li a:hover {
 
 .slider-arrow.left { left: 10px; }
 .slider-arrow.right { right: 10px; }
+
+/* DESKTOP GRID LAYOUT */
+/* KEEP SLIDER WORKING ON LARGE SCREENS */
+@media (min-width: 900px) {
+  .slider {
+    overflow: hidden;
+  }
+
+  .slider-track {
+    display: flex;
+    width: 500px;
+  }
+
+  .slide {
+    flex: 0 0 280px; /* desktop slide width */
+  }
+
+  .slider-arrow {
+    display: block; /* show arrows on desktop */
+  }
+}
+
 
 /* Footer */
 footer{
@@ -371,6 +396,7 @@ footer img{
   .hero-box-outside{font-size:16px;}
   .mentor-left h3{font-size:28px;}
   .mentor-left p{font-size:18px;}
+  .slide img{min-width:78%;flex:0 0 78%;}
 }
 @media (max-width:900px){
   nav ul{display:none;}
@@ -755,8 +781,8 @@ window.addEventListener('load', () => {
   let index = 0;
 
   function getSlideWidth() {
-    return slides[0].offsetWidth + 18; // dynamic
-  }
+  return slides[0].offsetWidth + 24;
+}
 
   function moveSlide() {
     index++;
